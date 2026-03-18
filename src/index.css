@@ -1,1 +1,9 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+body, #root {
+  @apply min-h-screen;
+}
+
+#root {
+  @apply py-8 flex flex-col items-center bg-neutral-100;
+}
