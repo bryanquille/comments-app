@@ -1,6 +1,9 @@
 import { ForumIcon } from "./components/Icons"
+import { useUser } from "./features/comments/hooks/useUser"
 
 function App() {
+  const { user } = useUser()
+
   return (
     <>
       <h1 className="flex justify-center items-center gap-4 font-bold text-4xl text-center">
@@ -9,11 +12,21 @@ function App() {
         </div>
         <span>App de comentarios</span>
       </h1>
-      <hr className="mt-4 mx-auto w-10/12 border-gray-300" />
+      <hr className="mt-4 mx-auto w-10/12 max-w-3xl border-gray-300" />
       <div className="mt-6 text-center">
         Aqui se muestran los comentarios
       </div>
       <form className="w-11/12 max-w-3xl mt-auto p-5 rounded-xl text-center flex flex-col items-center shadow-md bg-neutral-50">
+        <div
+          className="w-full mb-3 flex justify-start items-center gap-2"
+        >
+          <img
+            src={user?.picture?.medium}
+            alt="Imagen del usuario"
+            className="w-10 h-10 rounded-full"
+          />
+          <p>{`${user?.name?.first} ${user?.name?.last}`}</p>
+        </div>
         <textarea
           name="comment"
           id="comment"

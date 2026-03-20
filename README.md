@@ -1,4 +1,4 @@
-*Comments App*
+# Comments App
 This is a simple comments app built with React and TypeScript. It allows users to add, edit, and delete comments. The app uses local storage to persist comments across page reloads.
 ## Features
 - Add new comments
@@ -13,11 +13,11 @@ This is a simple comments app built with React and TypeScript. It allows users t
 To run the app locally, follow these steps:
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/bryanquille/comments-app.git
 ```
 2. Navigate to the project directory:
 ```bash
-cd <project-directory>
+cd comments-app
 ```
 3. Install the dependencies:
 ```bash
