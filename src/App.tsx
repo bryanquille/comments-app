@@ -1,7 +1,7 @@
 import Header from "./components/Header"
 import Form from "./features/comments/components/Form"
-import Comment from "./features/comments/components/CommentComponent"
 import { useGetComments } from "./features/comments/hooks/useGetComments"
+import CommentComponent from "./features/comments/components/CommentComponent"
 
 function App() {
   const { comments, isFetching, isError, error } = useGetComments()
@@ -18,7 +18,7 @@ function App() {
               ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>
               : comments?.map(comment => {
                 return (
-                  <Comment
+                  <CommentComponent
                     key={comment.id}
                     author={comment.author}
                     content={comment.content}

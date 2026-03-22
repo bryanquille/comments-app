@@ -19,7 +19,7 @@ export const updateComments = async (newComments: Comment[]) => {
   // Validating data before send them
   newComments.forEach(comment => CommentSchema.parse(comment))
 
-  const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+  const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
     method: 'PUT',
     headers: {
       "X-Master-Key": API_KEY,
