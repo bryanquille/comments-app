@@ -1,4 +1,4 @@
-import { CommentListSchema, type Comment } from "../schemas/comment.schema"
+import { CommentListSchema, CommentSchema, type Comment } from "../schemas/comment.schema"
 
 const API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
 const BIN_ID = import.meta.env.VITE_JSONBIN_BIN_ID
@@ -16,6 +16,9 @@ export const getComments = async () => {
 }
 
 export const updateComments = async (newComments: Comment[]) => {
+  // Validating data before send them
+  newComments.forEach(comment => CommentSchema.parse(comment))
+
   const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
     method: 'PUT',
     headers: {
@@ -24,6 +27,9 @@ export const updateComments = async (newComments: Comment[]) => {
     },
     body: JSON.stringify({ comments: newComments })
   })
-  if (!response.ok) throw new Error("Error al guardar");
-  return response.json();
+  if (!response.ok) {
+    const errorData = await response.json()
+    throw new Error(errorData.message || "Error al actualizar.")
+  }
+  return await response.json();
 }

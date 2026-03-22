@@ -1,16 +1,10 @@
-import { useQuery } from "@tanstack/react-query"
 import Header from "./components/Header"
 import Form from "./features/comments/components/Form"
 import Comment from "./features/comments/components/CommentComponent"
-import { getComments } from "./features/comments/services/comments"
+import { useGetComments } from "./features/comments/hooks/useGetComments"
 
 function App() {
-
-  const { data, isFetching, error, isError } = useQuery({
-    queryKey: ['comments'],
-    queryFn: getComments,
-    refetchOnWindowFocus: false,
-  })
+  const { comments, isFetching, isError, error } = useGetComments()
 
   return (
     <>
@@ -21,8 +15,8 @@ function App() {
           isFetching
             ? <div className="text-center mt-10">Cargando comentarios...</div>
             : isError
-              ? <div className="text-red-500 text-center mt-10">Error: {error.message}</div>
-              : data?.map(comment => {
+              ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>
+              : comments?.map(comment => {
                 return (
                   <Comment
                     key={comment.id}
