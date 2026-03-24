@@ -3,12 +3,14 @@ import Form from "./features/comments/components/Form"
 import { useGetComments } from "./features/comments/hooks/useGetComments"
 import CommentComponent from "./features/comments/components/CommentComponent"
 import CommentSkeleton from "./features/comments/components/CommentSkeleton"
+import { Toaster } from "sonner"
 
 function App() {
   const { comments, isLoading, isError, error } = useGetComments()
 
   return (
     <>
+      <Toaster position="bottom-center" richColors />
       <Header />
       <hr className="mt-4 mx-auto w-10/12 max-w-3xl border-gray-300" />
       <div className="w-11/12 max-w-3xl mt-6 text-center">
