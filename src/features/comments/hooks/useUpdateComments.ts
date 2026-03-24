@@ -12,10 +12,6 @@ export const useUpdateComments = () => {
       queryClient.setQueriesData({ queryKey: ['comments'] }, newCommentsList)
       return { previousComments }
     },
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries({ queryKey: ['comments'] })
-    //   console.log('¡Comentarios enviado exitosamente!')
-    // },
     onError: (error, _newCommentsList, context) => {
       if(context?.previousComments) {
         queryClient.setQueriesData({ queryKey: ['comments'] }, context.previousComments)

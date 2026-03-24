@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Form from "./features/comments/components/Form"
 import { useGetComments } from "./features/comments/hooks/useGetComments"
 import CommentComponent from "./features/comments/components/CommentComponent"
+import CommentSkeleton from "./features/comments/components/CommentSkeleton"
 
 function App() {
   const { comments, isLoading, isError, error } = useGetComments()
@@ -13,7 +14,11 @@ function App() {
       <div className="w-11/12 max-w-3xl mt-6 text-center">
         {
           isLoading
-            ? <div className="text-center mt-10">Cargando comentarios...</div>
+            ? <>
+                <CommentSkeleton />
+                <CommentSkeleton />
+                <CommentSkeleton />
+              </>
             : isError
               ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>
               : comments?.map(comment => {

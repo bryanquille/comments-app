@@ -1,43 +1,23 @@
 import { useRef } from "react"
 import UserComponent from "./UserComponent"
-import { useUser } from "../hooks/useUser"
-import { CommentSchema, type Comment } from "../schemas/comment.schema"
-import { useUpdateComments } from "../hooks/useUpdateComments"
-import { useQueryClient } from "@tanstack/react-query"
+import { useCreateComment } from "../hooks/useCreateComment"
 
 function Form() {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const { user } = useUser()
-  const { mutate, isPending } = useUpdateComments()
-  const queryClient = useQueryClient()
+  const { sendComment, isPending } = useCreateComment()
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const currentComments = queryClient.getQueryData<Comment[]>(['comments']) || []
-
-    const newComment = {
-      id: crypto.randomUUID(),
-      author: {
-        name: `${user?.name.first} ${user?.name.last}`,
-        avatarUrl: user?.picture.medium || '',
-      },
-      content: textareaRef.current?.value || '',
-      timestamp: new Date().toISOString(),
-      likes: 0,
-    }
-    CommentSchema.parse(newComment)
-    const updateComments = [...currentComments, newComment]
-    mutate(updateComments, {
-      onSuccess: () => {
-        if (textareaRef.current) textareaRef.current.value = ''
-        queryClient.invalidateQueries({ queryKey: ['user'] })
-      }
+    const text = textareaRef.current?.value || ''
+    if(!text?.trim() || isPending) return 
+    sendComment(text, () => {
+      if(textareaRef.current) textareaRef.current.value = '' 
     })
   }
 
   return (
     <form
-      className={`w-11/12 max-w-3xl mt-auto p-4 rounded-xl text-center flex flex-col items-center shadow-md bg-neutral-50 ${isPending ? 'opacity-40' : ''}`}
+      className={`w-11/12 max-w-3xl mt-auto p-4 rounded-xl text-center flex flex-col items-center shadow-md bg-white ${isPending ? 'opacity-40' : ''}`}
       onSubmit={handleSubmit}
     >
       <UserComponent />
