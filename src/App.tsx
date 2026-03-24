@@ -4,7 +4,7 @@ import { useGetComments } from "./features/comments/hooks/useGetComments"
 import CommentComponent from "./features/comments/components/CommentComponent"
 
 function App() {
-  const { comments, isFetching, isError, error } = useGetComments()
+  const { comments, isLoading, isError, error } = useGetComments()
 
   return (
     <>
@@ -12,7 +12,7 @@ function App() {
       <hr className="mt-4 mx-auto w-10/12 max-w-3xl border-gray-300" />
       <div className="w-11/12 max-w-3xl mt-6 text-center">
         {
-          isFetching
+          isLoading
             ? <div className="text-center mt-10">Cargando comentarios...</div>
             : isError
               ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>

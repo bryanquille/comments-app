@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { getComments } from "../services/comments"
 
 export const useGetComments = () => {
-  const { data: comments, isFetching, error, isError } = useQuery({
+  const { data: comments, isLoading, error, isError } = useQuery({
     queryKey: ['comments'],
     queryFn: getComments,
     refetchOnWindowFocus: false,
@@ -10,7 +10,7 @@ export const useGetComments = () => {
 
   return {
     comments,
-    isFetching,
+    isLoading,
     error,
     isError
   }

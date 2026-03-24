@@ -6,12 +6,24 @@ export const useUpdateComments = () => {
 
   return useMutation({
     mutationFn: updateComments,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['comments'] })
-      console.log('¡Comentarios enviado exitosamente!')
+    onMutate: async (newCommentsList) => {
+      await queryClient.cancelQueries({ queryKey: ['comments'] })
+      const previousComments = queryClient.getQueriesData<Comment[]>({ queryKey: ['commments'] })
+      queryClient.setQueriesData({ queryKey: ['comments'] }, newCommentsList)
+      return { previousComments }
     },
-    onError: (error) => {
+    // onSuccess: () => {
+    //   queryClient.invalidateQueries({ queryKey: ['comments'] })
+    //   console.log('¡Comentarios enviado exitosamente!')
+    // },
+    onError: (error, _newCommentsList, context) => {
+      if(context?.previousComments) {
+        queryClient.setQueriesData({ queryKey: ['comments'] }, context.previousComments)
+      }
       console.log('Hubo un error al enviar los comentarios.', error)
-    }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ['comments'] });
+    },
   })
 }
