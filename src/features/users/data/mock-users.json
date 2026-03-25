@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": "43596647-b85c-4deb-82c2-b70aca0eae08",
+      "name": {
+        "first": "Franjo",
+        "last": "Gebauer"
+      },
+      "email": "franjo.gebauer@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/63.jpg"
+    },
+    {
+      "id": "a74b0624-7b02-41f5-a1fa-fb9c035e06a6",
+      "name": {
+        "first": "Valerio",
+        "last": "Gaillard"
+      },
+      "email": "valerio.gaillard@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/13.jpg"
+    },
+    {
+      "id": "f4285984-5ad1-4d97-a030-dc3a7ed48ccd",
+      "name": {
+        "first": "Tamara",
+        "last": "Daničić"
+      },
+      "email": "tamara.danicic@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": "14f5df67-773c-4146-922d-a9b0295f705c",
+      "name": {
+        "first": "Lino",
+        "last": "da Cunha"
+      },
+      "email": "lino.dacunha@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/44.jpg"
+    },
+    {
+      "id": "9cc2fce0-0f9c-4d18-9159-376417f7b74b",
+      "name": {
+        "first": "Jessie",
+        "last": "Russell"
+      },
+      "email": "jessie.russell@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/69.jpg"
+    },
+    {
+      "id": "81ee0517-ef5c-4bc5-a73a-f7c1f4f467cb",
+      "name": {
+        "first": "Mehmet",
+        "last": "Abadan"
+      },
+      "email": "mehmet.abadan@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/18.jpg"
+    },
+    {
+      "id": "9e475580-8c56-4f50-bd0e-1eb2ed20c68b",
+      "name": {
+        "first": "Celia",
+        "last": "Bravo"
+      },
+      "email": "celia.bravo@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/74.jpg"
+    },
+    {
+      "id": "f73b28ef-23cc-4574-a3f9-de0a0872f849",
+      "name": {
+        "first": "María Eugenia",
+        "last": "Zamora"
+      },
+      "email": "mariaeugenia.zamora@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/70.jpg"
+    },
+    {
+      "id": "ae94eb53-fdf2-4454-90f7-6c47c9379ea2",
+      "name": {
+        "first": "Sami",
+        "last": "Ytreland"
+      },
+      "email": "sami.ytreland@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/99.jpg"
+    },
+    {
+      "id": "d30428fa-1c53-4f88-9bb1-5f8a0c97afad",
+      "name": {
+        "first": "Alissa",
+        "last": "Van Maarseveen"
+      },
+      "email": "alissa.vanmaarseveen@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    {
+      "id": "7b947098-1e5e-4163-81af-af207444f12c",
+      "name": {
+        "first": "Tristan",
+        "last": "Christiansen"
+      },
+      "email": "tristan.christiansen@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/39.jpg"
+    },
+    {
+      "id": "49a024eb-8bb2-4eb3-abe7-b576afb267be",
+      "name": {
+        "first": "Mariana",
+        "last": "Urías"
+      },
+      "email": "mariana.urias@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/94.jpg"
+    },
+    {
+      "id": "68ad6eb6-cf50-4e7a-8056-70509d68f05f",
+      "name": {
+        "first": "Vincent",
+        "last": "Hoeke"
+      },
+      "email": "vincent.hoeke@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/60.jpg"
+    },
+    {
+      "id": "390c1597-4518-4725-aaf0-dde596f18c66",
+      "name": {
+        "first": "Tim",
+        "last": "Chapman"
+      },
+      "email": "tim.chapman@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+      "id": "88507a48-7084-4cbb-ba9e-25ac5a6ed81b",
+      "name": {
+        "first": "Adem",
+        "last": "Bayındır"
+      },
+      "email": "adem.bayindir@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/62.jpg"
+    },
+    {
+      "id": "863c1eda-b3f9-4fb3-9340-e2fefd71a4c7",
+      "name": {
+        "first": "Ramona",
+        "last": "Moore"
+      },
+      "email": "ramona.moore@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/90.jpg"
+    },
+    {
+      "id": "126a1ee3-6dbc-4052-a95c-02910a15baae",
+      "name": {
+        "first": "Avery",
+        "last": "Chan"
+      },
+      "email": "avery.chan@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/43.jpg"
+    },
+    {
+      "id": "6f823bdf-e369-4baa-b55b-03f9688a5a19",
+      "name": {
+        "first": "Spasoje",
+        "last": "Mandić"
+      },
+      "email": "spasoje.mandic@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/91.jpg"
+    },
+    {
+      "id": "d3ec6075-9498-45ce-97fb-6e442a8258e1",
+      "name": {
+        "first": "Elliot",
+        "last": "Anderson"
+      },
+      "email": "elliot.anderson@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/73.jpg"
+    },
+    {
+      "id": "765d9226-a952-4047-b721-529cbb5e2be8",
+      "name": {
+        "first": "Jules",
+        "last": "Lefebvre"
+      },
+      "email": "jules.lefebvre@example.com",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/43.jpg"
+    }
+  ]
+}
