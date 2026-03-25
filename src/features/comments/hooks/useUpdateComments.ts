@@ -16,7 +16,7 @@ export const useUpdateComments = () => {
       if(context?.previousComments) {
         queryClient.setQueriesData({ queryKey: ['comments'] }, context.previousComments)
       }
-      console.log('Hubo un error al enviar los comentarios.', error)
+      console.log('Hubo un error al actualizar los comentarios:', error)
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ['comments'] });

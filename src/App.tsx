@@ -27,6 +27,7 @@ function App() {
                 return (
                   <CommentComponent
                     key={comment.id}
+                    id={comment.id}
                     author={comment.author}
                     content={comment.content}
                     likes={comment.likes}
