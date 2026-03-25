@@ -1,6 +1,6 @@
 import { useRef } from "react"
-import UserComponent from "./UserComponent"
 import { useCreateComment } from "../hooks/useCreateComment"
+import UserComponent from "../../users/components/UserComponent"
 
 function Form() {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -9,11 +9,12 @@ function Form() {
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     const text = textareaRef.current?.value || ''
-    if(!text?.trim() || isPending) return 
+    if (!text?.trim() || isPending) return
     sendComment(text, () => {
-      if(textareaRef.current) textareaRef.current.value = '' 
+      if (textareaRef.current) textareaRef.current.value = ''
     })
   }
+
 
   return (
     <form

@@ -17,10 +17,10 @@ function App() {
         {
           isLoading
             ? <>
-                <CommentSkeleton />
-                <CommentSkeleton />
-                <CommentSkeleton />
-              </>
+              <CommentSkeleton />
+              <CommentSkeleton />
+              <CommentSkeleton />
+            </>
             : isError
               ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>
               : comments?.map(comment => {

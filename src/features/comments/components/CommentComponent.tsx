@@ -14,7 +14,7 @@ function CommentComponent({ id, author, content, likes, timestamp }: Comment) {
     const savedLikes = localStorage.getItem('user_likes')
     if (!savedLikes) return false
     const likesArray = JSON.parse(savedLikes)
-    console.log(likesArray)
+    // console.log(likesArray)
     return likesArray.includes(id)
   })
   const { mutate } = useUpdateComments()
