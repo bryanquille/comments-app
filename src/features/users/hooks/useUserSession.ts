@@ -13,7 +13,7 @@ export const useUserSession = () => {
   })
 
   const changeUser = (userId: string) => {
-    const user = mockUsers.users.find(u => u.id === userId)
+    const user = allUsers.find(u => u.id === userId)
     if (user) queryClient.setQueryData(['active-user'], user)
   }
 

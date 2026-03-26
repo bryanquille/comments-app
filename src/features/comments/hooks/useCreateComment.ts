@@ -1,27 +1,28 @@
 import { useQueryClient } from "@tanstack/react-query"
-import { useUser } from "./useUser"
 import { useUpdateComments } from "./useUpdateComments"
-import { CommentSchema } from "../schemas/comment.schema"
-import type { CommentWithIdType } from "../../../types"
+import { CommentSchema, type Comment } from "../schemas/comment.schema"
 import { toast } from "sonner"
+import { useUserSession } from "../../users/hooks/useUserSession"
 
 export const useCreateComment = () => {
   const queryClient = useQueryClient()
-  const { user } = useUser()
+  const { currentUser: user } = useUserSession()
   const { mutate, isPending } = useUpdateComments()
 
   const sendComment = (content: string, onSuccessCallback?: () => void) => {
-    const currentComments = queryClient.getQueryData<CommentWithIdType[]>(['comments']) || []
+    const currentComments = queryClient.getQueryData<Comment[]>(['comments']) || []
 
-    const newComment: CommentWithIdType = {
+    const newComment = {
       id: crypto.randomUUID(),
       author: {
+        authorId: user.id,
         name: `${user?.name.first} ${user?.name.last}`,
-        avatarUrl: user?.picture.medium || '',
+        avatarUrl: user.avatarUrl,
       },
-      content: content || '',
+      content: content,
       timestamp: new Date().toISOString(),
       likes: 0,
+      whoLiked: []
     }
     CommentSchema.parse(newComment)
 

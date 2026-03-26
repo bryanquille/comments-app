@@ -22,19 +22,21 @@ function App() {
               <CommentSkeleton />
             </>
             : isError
-              ? <div className="text-red-500 text-center mt-10">Error: {error?.message}</div>
-              : comments?.map(comment => {
-                return (
-                  <CommentComponent
-                    key={comment.id}
-                    id={comment.id}
-                    author={comment.author}
-                    content={comment.content}
-                    likes={comment.likes}
-                    timestamp={comment.timestamp}
-                  />
-                )
-              })
+              ? <p className="text-red-500 text-center mt-10">Error: {error?.message}</p>
+              : comments?.length === 0
+                ? <p className="text-gray-500 text-center mt-10">No hay comentarios aún. ¡Sé el primero en comentar!</p>
+                : comments?.map(comment => {
+                  return (
+                    <CommentComponent
+                      key={comment.id}
+                      id={comment.id}
+                      author={comment.author}
+                      content={comment.content}
+                      likes={comment.likes}
+                      timestamp={comment.timestamp}
+                    />
+                  )
+                })
         }
       </div>
       <Form />

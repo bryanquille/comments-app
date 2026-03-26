@@ -15,7 +15,6 @@ function Form() {
     })
   }
 
-
   return (
     <form
       className={`w-11/12 max-w-3xl mt-auto p-4 rounded-xl text-center flex flex-col items-center shadow-md bg-white ${isPending ? 'opacity-40' : ''}`}
