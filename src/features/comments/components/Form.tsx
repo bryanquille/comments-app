@@ -17,7 +17,7 @@ function Form() {
 
   return (
     <form
-      className={`w-11/12 max-w-3xl mt-auto p-4 rounded-xl text-center flex flex-col items-center shadow-md bg-white ${isPending ? 'opacity-40' : ''}`}
+      className={`w-11/12 max-w-3xl mt-auto p-4 rounded-xl text-center flex flex-col items-center border border-gray-300 shadow-md bg-white ${isPending ? 'opacity-40' : ''} dark:bg-[#0D121D] dark:border dark:border-blue-900`}
       onSubmit={handleSubmit}
     >
       <UserComponent />
@@ -27,7 +27,7 @@ function Form() {
         placeholder="Comparte tus ideas..."
         ref={textareaRef}
         maxLength={500}
-        className=" w-full min-h-32 p-3 border border-gray-300 rounded-md shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className=" w-full min-h-32 p-3 border border-gray-300 rounded-md shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-blue-900"
       ></textarea>
       <button
         type="submit"

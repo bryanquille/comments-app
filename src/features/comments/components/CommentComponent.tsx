@@ -13,13 +13,12 @@ function CommentComponent({ id, author, content, likes, timestamp }: Comment) {
         alt="User image"
         className="w-12 h-12 rounded-full"
       />
-      <div className="grow flex flex-col justify-start items-start gap-1">
-        <div className="flex justify-start items-center gap-3">
+      <div className="grow flex flex-col justify-start items-start gap-2">
+        <div className="flex flex-col justify-start items-start md:flex-row md:items-center md:gap-3">
           <strong className="font-semibold text-left">{author.name}</strong>
-          {/* TODO: manage dates to show short time */}
           <time
             dateTime="2026-03-20T20:18:46.420Z"
-            className="text-gray-500 text-left"
+            className="text-gray-500 text-left text-sm md:text-base"
           >
             {formatCommentDate(timestamp)}
           </time>
@@ -35,7 +34,7 @@ function CommentComponent({ id, author, content, likes, timestamp }: Comment) {
           >
             <LikeIcon className={`w-5 h-5 ${isLiked ? 'fill-blue-500' : 'fill-gray-400 hover:fill-blue-500'}`} />
           </button>
-          <span className="text-gray-500">{likes}</span>
+          <span className="text-gray-500 dark:text-gray-400">{likes}</span>
         </div>
       </div>
     </div>

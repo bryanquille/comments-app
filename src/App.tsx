@@ -12,7 +12,7 @@ function App() {
     <>
       <Toaster position="bottom-center" richColors />
       <Header />
-      <hr className="mt-4 mx-auto w-10/12 max-w-3xl border-gray-300" />
+      <hr className="mt-4 mx-auto w-11/12 max-w-3xl border-gray-300" />
       <div className="w-11/12 max-w-3xl mt-6 text-center">
         {
           isLoading
@@ -22,9 +22,13 @@ function App() {
               <CommentSkeleton />
             </>
             : isError
-              ? <p className="text-red-500 text-center mt-10">Error: {error?.message}</p>
+              ? <p className="text-red-500 text-center mt-10 dark:text-red-300">Error: {error?.message}</p>
               : comments?.length === 0
-                ? <p className="text-gray-500 text-center mt-10">No hay comentarios aún. ¡Sé el primero en comentar!</p>
+                ? <p
+                    className="text-gray-500 text-center mt-10 dark:text-gray-300"
+                  >
+                    No hay comentarios aún. ¡Sé el primero en comentar!
+                  </p>
                 : comments?.map(comment => {
                   return (
                     <CommentComponent

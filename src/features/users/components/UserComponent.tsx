@@ -27,6 +27,7 @@ function UserComponent() {
             <option
               value={user.id}
               key={user.id}
+              className="text-blue-950"
             >
               {`${user.name.first} ${user.name.last}`}
             </option>

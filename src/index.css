@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 body, #root {
   @apply min-h-screen;
 }
 
 #root {
-  @apply py-8 flex flex-col items-center bg-neutral-100;
+  @apply py-8 flex flex-col items-center bg-neutral-100 dark:bg-[#0a0a0b] dark:text-[#f6f6f8];
 }
