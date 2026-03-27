@@ -1,6 +1,7 @@
 import { LikeIcon } from "../../../components/Icons"
 import { useLikeComment } from "../hooks/useLikeComment"
 import type { Comment } from "../schemas/comment.schema"
+import { formatCommentDate } from "../utils/date"
 
 function CommentComponent({ id, author, content, likes, timestamp }: Comment) {
   const { isLiked, handleLike } = useLikeComment(id)  
@@ -20,7 +21,7 @@ function CommentComponent({ id, author, content, likes, timestamp }: Comment) {
             dateTime="2026-03-20T20:18:46.420Z"
             className="text-gray-500 text-left"
           >
-            {timestamp}
+            {formatCommentDate(timestamp)}
           </time>
         </div>
         <p className="text-left">
